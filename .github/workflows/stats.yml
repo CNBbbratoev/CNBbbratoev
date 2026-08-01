@@ -30,6 +30,9 @@ jobs:
           committer_token: "" 
           template: classic
           config_timezone: America/Los_Angeles
+           # Target contributor access scopes across all remote feature branches
+          repositories_affiliations: owner, collaborator
+          plugin_commits_all_branches: yes          
           
           # Base framework control
           base: header, activity, community, repositories, metadata
@@ -44,6 +47,10 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: yes
           plugin_habits_trim: no
+
+          # EXTENDED HISTORY FIX: Expands Lines of Code History to match your 5-year timeline
+          plugin_lines: yes
+          plugin_lines_history_days: 1825 # 5 years * 365 days
           
           # Preserves your multi-year visual grid roadmap at the bottom
           plugin_calendar: yes
