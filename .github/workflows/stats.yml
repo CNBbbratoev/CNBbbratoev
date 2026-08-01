@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.STATS_PAT }}
           user: ${{ github.repository_owner }}
           # 1. CRITICAL: Tells the action to save it in the root folder locally
-          filename: github-metrics.svg 
+          filename: profile/github-metrics.svg 
           # 2. CRITICAL: Instructs the plugin to NOT auto-commit the file
           output_action: none 
           template: classic
