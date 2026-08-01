@@ -49,7 +49,7 @@ jobs:
           plugin_habits_trim: no
 
           # EXTENDED HISTORY FIX: Expands Lines of Code History to match your 5-year timeline
-          plugin_lines: yes
+  
           plugin_lines_history_days: 1825 # 5 years * 365 days
           
           # Preserves your multi-year visual grid roadmap at the bottom
