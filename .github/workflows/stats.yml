@@ -23,21 +23,14 @@ jobs:
           output_action: none
           template: classic
           config_timezone: America/Los_Angeles
-          
-          # 1. Keeps the detailed text blocks
           base: header, activity, community, repositories, metadata
           config_padding: 0, 8
           config_order: base.header, base.activity, base.community, base.repositories, base.metadata
-          
-          # 2. Displays detailed breakdown sections (PRs, Issues, Reviews)
           plugin_followup: yes
           plugin_followup_sections: user
           plugin_lines: yes
-          
-          # 3. Keeps your 4-year calendar view embedded at the bottom
           plugin_calendar: yes
           plugin_calendar_limit: 5
-
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
@@ -55,16 +48,18 @@ jobs:
           path: profile/pin-stats-organization-github-readme-stats.svg
           token: ${{ secrets.STATS_PAT }}
 
-      # Now this step aggregates ALL files (the root one and the profile ones) cleanly
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@://github.com"
           
-          # Stage your explicit paths
-          git add profile/github-metrics.svg profile/top-langs.svg profile/pin-stats-organization-github-readme-stats.svg
+          # Force add the entire profile directory containing the SVGs
+          git add profile/*.svg
           
-          # Commits only if changes exist, preventing ghost skip notices
-          git diff --staged --quiet || git commit -m "Update README cards"
-          git push
-
+          # Commit and push changes directly if files are updated
+          if ! git diff --staged --quiet; then
+            git commit -m "Update README cards"
+            git push
+          else
+            echo "No visual file updates detected."
+          fi
