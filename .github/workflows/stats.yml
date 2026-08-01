@@ -13,6 +13,8 @@ jobs:
       contents: write
 
     steps:
+      - uses: actions/checkout@v6
+      
       - name: Generate GitHub Metrics Card
         uses: lowlighter/metrics@latest
         with:
@@ -24,9 +26,7 @@ jobs:
           # Ensures your private counts show up if enabled in your public profile settings
           plugin_habits: yes
           plugin_habits_facts: yes
-
-      - uses: actions/checkout@v6
-
+          
       - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v2
         with:
