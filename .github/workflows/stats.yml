@@ -8,34 +8,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v6
-      
+
+      # Replacement for your old stats card (Option 3)
       - name: Generate GitHub Metrics Card
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.STATS_PAT }}
           user: ${{ github.repository_owner }}
+          filename: profile/github-metrics.svg # Forces output into your profile folder
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Los_Angeles
-          # Ensures your private counts show up if enabled in your public profile settings
           plugin_habits: yes
           plugin_habits_facts: yes
-          
-      - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          # options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&count_private=true
-          options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&count_private=true&count_private_contributions=true
-          path: profile/stats.svg
-          token: ${{ secrets.STATS_PAT }}
 
+      # Kept because top languages do not rely on missing private repository histories
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -52,6 +44,7 @@ jobs:
           path: profile/pin-stats-organization-github-readme-stats.svg
           token: ${{ secrets.STATS_PAT }}
 
+      # Automatically commits all generated assets inside your profile directory
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
