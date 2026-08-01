@@ -31,24 +31,24 @@ jobs:
           template: classic
           config_timezone: America/Los_Angeles
           
-          # Base framework control
+          # REMOVED: repositories_affiliations (Restores default wide search matrices)
+          # REMOVED: plugin_commits_authoring_branches (Prevents historical timeline API cutoffs)
+          
+          # Base structure alignment
           base: header, activity, community, repositories, metadata
           config_padding: 0, 8
           config_order: base.header, base.activity, base.community, base.repositories, base.metadata
           
-          # Forces the code text elements to align with your lifetime totals
-          plugin_lines: yes
-          repositories_affiliations: owner, collaborator, organization_member
-
-          # Maps out the granular year-by-year ratios in your statistics array
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_trim: no
+          # Keep your target layout trackers
+          plugin_followup: yes
+          plugin_followup_sections: user
           
-          # Preserves your multi-year visual grid roadmap at the bottom
+          # Preserves your multi-year lines analytics and visual grid blocks
+          plugin_lines: yes
+          plugin_lines_sections: base, history
           plugin_calendar: yes
           plugin_calendar_limit: 5
+
 
 
       - name: Generate top languages card
