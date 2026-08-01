@@ -29,8 +29,8 @@ jobs:
           plugin_followup: yes
           plugin_followup_sections: user
           plugin_lines: yes
-          plugin_calendar: yes
-          plugin_calendar_limit: 5
+          # plugin_calendar: yes
+          # plugin_calendar_limit: 5
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
