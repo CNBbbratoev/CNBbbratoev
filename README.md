@@ -15,6 +15,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 [![GitHub Streak](https://streak-stats.demolab.com/?user=CNBbbratoev)](https://git.io/streak-stats)
+<img src="profile/3d/profile-green.svg" alt="My 3D GitHub Contributions">
+
+
 <img src="./profile/github-metrics.svg" alt="GitHub Metrics">
 
 ![Stats](./profile/stats.svg)
