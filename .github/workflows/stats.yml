@@ -24,8 +24,15 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: America/Los_Angeles
+          
+          # PLUGIN 1: This breaks out your exact PRs, Issues, and Reviews into clear visual sections
+          plugin_followup: yes
+          plugin_followup_sections: user
+          
+          # PLUGIN 2: Forces the card to scrape your profile's native contribution facts (getting you back to 144)
           plugin_habits: yes
           plugin_habits_facts: yes
+          plugin_habits_charts: yes
 
       # Kept because top languages do not rely on missing private repository histories
       - name: Generate top languages card
