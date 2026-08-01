@@ -22,17 +22,23 @@ jobs:
           user: ${{ github.repository_owner }}
           filename: profile/github-metrics.svg # Forces output into your profile folder
           template: classic
-          base: header, activity, community, repositories, metadata
+          # base: header, activity, community, repositories, metadata
           config_timezone: America/Los_Angeles
+
+          # Hides the broken text counters entirely to keep the layout clean
+          base: "" 
           
-          # PLUGIN 1: This breaks out your exact PRs, Issues, and Reviews into clear visual sections
-          plugin_followup: yes
-          plugin_followup_sections: user
+          # Enables the full multi-year history grid
+          plugin_calendar: yes
+          plugin_calendar_limit: 4 # Pulls the last 4 years of history squares
+          # # PLUGIN 1: This breaks out your exact PRs, Issues, and Reviews into clear visual sections
+          # plugin_followup: yes
+          # plugin_followup_sections: user
           
-          # PLUGIN 2: Forces the card to scrape your profile's native contribution facts (getting you back to 144)
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
+          # # PLUGIN 2: Forces the card to scrape your profile's native contribution facts (getting you back to 144)
+          # plugin_habits: yes
+          # plugin_habits_facts: yes
+          # plugin_habits_charts: yes
 
       # Kept because top languages do not rely on missing private repository histories
       - name: Generate top languages card
