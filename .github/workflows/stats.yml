@@ -27,14 +27,25 @@ jobs:
           user: ${{ github.repository_owner }}
           filename: profile/github-metrics.svg
           output_action: commit
+          committer_token: "" 
           template: classic
           config_timezone: America/Los_Angeles
+          
+          # Base framework control
           base: header, activity, community, repositories, metadata
           config_padding: 0, 8
           config_order: base.header, base.activity, base.community, base.repositories, base.metadata
-          plugin_followup: yes
-          plugin_followup_sections: user
+          
+          # Forces the code text elements to align with your lifetime totals
           plugin_lines: yes
+          
+          # Maps out the granular year-by-year ratios in your statistics array
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_trim: no
+          
+          # Preserves your multi-year visual grid roadmap at the bottom
           plugin_calendar: yes
           plugin_calendar_limit: 5
 
