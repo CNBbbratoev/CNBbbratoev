@@ -26,7 +26,7 @@ jobs:
           token: ${{ secrets.STATS_PAT }}
           user: ${{ github.repository_owner }}
           filename: profile/github-metrics.svg
-          output_action: none
+          output_action: commit
           template: classic
           config_timezone: America/Los_Angeles
           base: header, activity, community, repositories, metadata
@@ -35,8 +35,8 @@ jobs:
           plugin_followup: yes
           plugin_followup_sections: user
           plugin_lines: yes
-          # plugin_calendar: yes
-          # plugin_calendar_limit: 5
+          plugin_calendar: yes
+          plugin_calendar_limit: 5
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
