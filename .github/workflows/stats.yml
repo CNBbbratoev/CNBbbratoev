@@ -13,7 +13,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-
+      
+      # NEW: Cleans out old SVGs so the actions are forced to build them fresh
+      - name: Clean old SVG files
+        run: |
+          mkdir -p profile
+          rm -f profile/*.svg
+          
       - name: Generate GitHub Metrics Card
         uses: lowlighter/metrics@latest
         with:
