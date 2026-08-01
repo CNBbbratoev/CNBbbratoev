@@ -79,18 +79,18 @@ jobs:
           path: profile/pin-stats-organization-github-readme-stats.svg
           token: ${{ secrets.STATS_PAT }}
 
+# 2. Tracks and commits all your asset subdirectories cleanly
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@://github.com"
           
-          # Force add the entire profile directory containing the SVGs
-          git add profile/*.svg
+          # Adds the language card, the pin card, and all generated 3D themes
+          git add profile/*.svg profile/3d/*.svg
           
-          # Commit and push changes directly if files are updated
           if ! git diff --staged --quiet; then
-            git commit -m "Update README cards"
+            git commit -m "Update README cards with 3D stats"
             git push
           else
-            echo "No visual file updates detected."
+            echo "No visual updates found."
           fi
