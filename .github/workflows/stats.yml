@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # 1. Clean out the legacy directories completely
+      # 1. Clean out legacy repository directories
       - name: Clean old SVG files
         run: |
           git rm -rf profile/ || true
@@ -25,9 +25,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-        with:
-          # This formatting forces the action runner to bypass standard defaults
-          args: ${{ github.repository_owner }} 2026
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2026
       - name: Save 2026 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2026.svg || true
@@ -38,8 +37,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-        with:
-          args: ${{ github.repository_owner }} 2025
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2025
       - name: Save 2025 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2025.svg || true
@@ -50,8 +49,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-        with:
-          args: ${{ github.repository_owner }} 2024
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2024
       - name: Save 2024 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2024.svg || true
@@ -62,8 +61,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-        with:
-          args: ${{ github.repository_owner }} 2023
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2023
       - name: Save 2023 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2023.svg || true
@@ -74,8 +73,8 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-        with:
-          args: ${{ github.repository_owner }} 2022
+          USERNAME: ${{ github.repository_owner }}
+          YEAR: 2022
       - name: Save 2022 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2022.svg || true
