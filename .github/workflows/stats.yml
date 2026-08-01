@@ -38,7 +38,8 @@ jobs:
           
           # Forces the code text elements to align with your lifetime totals
           plugin_lines: yes
-          
+          repositories_affiliations: owner, collaborator, organization_member
+
           # Maps out the granular year-by-year ratios in your statistics array
           plugin_habits: yes
           plugin_habits_facts: yes
