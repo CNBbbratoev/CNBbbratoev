@@ -14,6 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+<img src="github-metrics.svg" alt="GitHub Metrics" width="100%">
+
 ![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
 ![Pinned](./profile/pin-stats-organization-github-readme-stats.svg)
