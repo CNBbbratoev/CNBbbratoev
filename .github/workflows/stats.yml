@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # 1. Clean out legacy directory layouts completely
+      # 1. Clean out legacy directories completely
       - name: Clean old SVG files
         run: |
           git rm -rf profile/ || true
@@ -23,10 +23,11 @@ jobs:
       # Year 2026 (Current Year)
       - name: Generate 2026 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        with:
+          # This formatting feeds arguments directly to the underlying node script execution
+          args: ${{ github.repository_owner }} 2026
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2026
       - name: Save 2026 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2026.svg || true
@@ -35,10 +36,10 @@ jobs:
       # Year 2025
       - name: Generate 2025 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        with:
+          args: ${{ github.repository_owner }} 2025
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2025
       - name: Save 2025 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2025.svg || true
@@ -47,10 +48,10 @@ jobs:
       # Year 2024
       - name: Generate 2024 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        with:
+          args: ${{ github.repository_owner }} 2024
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2024
       - name: Save 2024 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2024.svg || true
@@ -59,10 +60,10 @@ jobs:
       # Year 2023
       - name: Generate 2023 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        with:
+          args: ${{ github.repository_owner }} 2023
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2023
       - name: Save 2023 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2023.svg || true
@@ -71,16 +72,16 @@ jobs:
       # Year 2022
       - name: Generate 2022 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        with:
+          args: ${{ github.repository_owner }} 2022
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_PAT }}
-          USERNAME: ${{ github.repository_owner }}
-          YEAR: 2022
       - name: Save 2022 Data
         run: |
           mv -f profile-3d-contrib/profile-night-green.svg profile/3d/3d-2022.svg || true
           rm -rf profile-3d-contrib/
 
-      # Independent Languages Stats Card
+      # Secondary text metrics compilation card
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -89,7 +90,7 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.STATS_PAT }}
 
-      # 2. Push multi-year assets directly to your remote profile branch folder
+      # 2. Push all individual year files up to your repository profile folder
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
@@ -98,6 +99,6 @@ jobs:
           git add profile/*.svg profile/3d/*.svg
           
           if ! git diff --staged --quiet; then
-            git commit -m "Update unique multi-year night green 3D blocks"
+            git commit -m "Update multi-year distinct 3D blocks via CLI args"
             git push
           fi
