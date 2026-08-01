@@ -31,22 +31,21 @@ jobs:
           template: classic
           config_timezone: America/Los_Angeles
           
-          # Target contributor access scopes across all branches
-          repositories_affiliations: owner, collaborator
-          
-          # FIXED TERM 1: Tells the core engine to look beyond just the default main branch
-          plugin_commits_authoring_branches: all
-          
+          # Base framework control
           base: header, activity, community, repositories, metadata
           config_padding: 0, 8
           config_order: base.header, base.activity, base.community, base.repositories, base.metadata
-          plugin_followup: yes
-          plugin_followup_sections: user
           
-          # FIXED TERM 2: Tells the line system to map metrics for your full history block
+          # Forces the code text elements to align with your lifetime totals
           plugin_lines: yes
-          plugin_lines_sections: base, history
           
+          # Maps out the granular year-by-year ratios in your statistics array
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_trim: no
+          
+          # Preserves your multi-year visual grid roadmap at the bottom
           plugin_calendar: yes
           plugin_calendar_limit: 5
 
