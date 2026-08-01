@@ -64,7 +64,12 @@ jobs:
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # git add github-metrics.svg profile/*.svg
-          git commit -m "Update README cards" || exit 0
+          git config user.email "41898282+github-actions[bot]@://github.com"
+          
+          # Stage your explicit paths
+          git add profile/github-metrics.svg profile/top-langs.svg profile/pin-stats-organization-github-readme-stats.svg
+          
+          # Commits only if changes exist, preventing ghost skip notices
+          git diff --staged --quiet || git commit -m "Update README cards"
           git push
+
