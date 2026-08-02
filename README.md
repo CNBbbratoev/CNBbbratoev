@@ -21,7 +21,7 @@ Here are some ideas to get you started:
 <!-- 1. The Active Year (Visible Immediately) -->
 <div align="left">
   <h4>2026 (Current Year)</h4>
-  <img src="profile/3d/3d-2026.svg" alt="2026 3D Graph" width="50%">
+  <img src="profile/3d/3d-2026.svg" alt="2026 3D Graph" width="595px">
 </div>
 
 <br/>
@@ -33,19 +33,19 @@ Here are some ideas to get you started:
 <div align="left">
 
   <h4>2025</h4>
-  <img src="profile/3d/3d-2025.svg" alt="2025 3D Graph" width="50%">
+  <img src="profile/3d/3d-2025.svg" alt="2025 3D Graph" width="595px">
   <br/><br/>
   
   <h4>2024</h4>
-  <img src="profile/3d/3d-2024.svg" alt="2024 3D Graph" width="50%">
+  <img src="profile/3d/3d-2024.svg" alt="2024 3D Graph" width="595px">
   <br/><br/>
   
   <h4>2023</h4>
-  <img src="profile/3d/3d-2023.svg" alt="2023 3D Graph" width="50%">
+  <img src="profile/3d/3d-2023.svg" alt="2023 3D Graph" width="595px">
   <br/><br/>
   
   <h4>2022</h4>
-  <img src="profile/3d/3d-2022.svg" alt="2022 3D Graph" width="50%">
+  <img src="profile/3d/3d-2022.svg" alt="2022 3D Graph" width="595px">
 
 </div>
 
