@@ -16,20 +16,38 @@ Here are some ideas to get you started:
 -->
 [![GitHub Streak](https://streak-stats.demolab.com/?user=CNBbbratoev)](https://git.io/streak-stats)
 
-### 🗓️ 5-Year 3D Contribution History
+### 🗓️ My 3D Contribution History
 
-| 2026 | 2025 |
-| --- | --- |
-| <img src="profile/3d/3d-2026.svg" width="100%"> | <img src="profile/3d/3d-2025.svg" width="100%"> |
+<!-- 1. The Active Year (Visible Immediately) -->
+<div align="center">
+  <h4>2026 (Current Year)</h4>
+  <img src="profile/3d/3d-2026.svg" alt="2026 3D Graph" width="50%">
+</div>
 
-| 2024 | 2023 | 2022 |
-| --- | --- | --- |
-| <img src="profile/3d/3d-2024.svg" width="100%"> | <img src="profile/3d/3d-2023.svg" width="100%"> | <img src="profile/3d/3d-2022.svg" width="100%"> |
+<br/>
+
+<!-- 2. The Expandable Drawer Wrapper (Hidden Until Clicked) -->
+<details>
+  <summary><strong>📐 Click to view historical archives (2025 - 2022)</strong></summary>
+  <br/>
+  <div align="center">
+
+    <h4>2025 History</h4>
+    <img src="profile/3d/3d-2025.svg" alt="2025 3D Graph" width="50%">
+    <br/><br/>
+    
+    <h4>2024 History</h4>
+    <img src="profile/3d/3d-2024.svg" alt="2024 3D Graph" width="50%">
+    <br/><br/>
+    
+    <h4>2023 History</h4>
+    <img src="profile/3d/3d-2023.svg" alt="2023 3D Graph" width="50%">
+    <br/><br/>
+    
+    <h4>2022 History</h4>
+    <img src="profile/3d/3d-2022.svg" alt="2022 3D Graph" width="50%">
+
+  </div>
+</details>
 
 
-
-<img src="./profile/github-metrics.svg" alt="GitHub Metrics">
-
-![Stats](./profile/stats.svg)
-![Top Languages](./profile/top-langs.svg)
-![Pinned](./profile/pin-stats-organization-github-readme-stats.svg)
